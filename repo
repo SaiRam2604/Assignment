@@ -1,0 +1,118 @@
+//JAVA
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Create an array and shuffle it
+        Integer[] array = {1, 2, 3, 4, 5, 6, 7};
+        List<Integer> list = Arrays.asList(array);
+        Collections.shuffle(list);
+        System.out.println(Arrays.toString(list.toArray()));
+
+        // 2. Convert a Roman numeral to an integer
+        String romanNumeral = "IX";
+        int integerVal = romanToInteger(romanNumeral);
+        System.out.println("Roman numeral " + romanNumeral + " is equivalent to " + integerVal);
+        
+        // 3. Check if the input is a pangram
+        String sentence = "The quick brown fox jumps over the lazy dog";
+        boolean isPangram = isPangram(sentence);
+        System.out.println("Is it a pangram? " + isPangram);
+    }
+
+    public static int romanToInteger(String s) {
+        // Implement your code to convert a Roman numeral to an integer
+        // For example, "IX" should return 9.
+        return 0; // Placeholder
+    }
+
+    public static boolean isPangram(String s) {
+        // Implement your code to check if the input is a pangram
+        // A pangram contains all alphabets from A to Z.
+        return false; // Placeholder
+    }
+}
+//JAVASCRIPT
+// 1. Reverse words in a sentence
+function reverseWords(sentence) {
+    return sentence.split(' ').map(word => {
+        return word.split('').reverse().join('');
+    }).join(' ');
+}
+
+// 2. Sort an array in descending order
+function sortDescending(arr) {
+    return arr.sort((a, b) => b - a);
+}
+
+const inputSentence = "This is a sunny day";
+const reversedSentence = reverseWords(inputSentence);
+console.log(reversedSentence);
+
+const numbersArray = [5, 3, 9, 1, 7];
+const descendingArray = sortDescending(numbersArray);
+console.log(descendingArray);
+//HTML
+<!-- 1. Basic Calculator -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToDisplay('/')">/</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- styles.css -->
+/* Add CSS styles to your calculator */
+
+/* script.js */
+// 1. Implement the calculator functionality using JavaScript
+
+// Initialize display
+let display = document.getElementById('display');
+let currentInput = "";
+
+function appendToDisplay(value) {
+    currentInput += value;
+    display.value = currentInput;
+}
+
+function clearDisplay() {
+    currentInput = "";
+    display.value = "";
+}
+
+function calculateResult() {
+    try {
+        currentInput = eval(currentInput);
+        display.value = currentInput;
+    } catch (error) {
+        display.value = "Error";
+    }
+}
